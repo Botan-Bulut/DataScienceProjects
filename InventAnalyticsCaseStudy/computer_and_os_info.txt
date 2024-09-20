@@ -1,0 +1,109 @@
+System:
+  Kernel: 6.5.0-14-generic x86_64 bits: 64 compiler: N/A Desktop: Cinnamon 6.0.4 tk: GTK 3.24.33
+    wm: muffin vt: 7 dm: LightDM 1.30.0 Distro: Linux Mint 21.3 Virginia base: Ubuntu 22.04 jammy
+Machine:
+  Type: Laptop System: LENOVO product: 21AS v: ThinkBook 13s G4 ARB serial: <superuser required>
+    Chassis: type: 10 v: ThinkBook 13s G4 ARB serial: <superuser required>
+  Mobo: LENOVO model: LNVNB161216 v: NO DPK serial: <superuser required> UEFI: LENOVO
+    v: HZCN44WW date: 07/21/2022
+Battery:
+  ID-1: BAT0 charge: 43.7 Wh (80.0%) condition: 54.6/56.0 Wh (97.5%) volts: 16.8 min: 15.5
+    model: BYD L21B4PD0 type: Li-poly serial: <filter> status: Discharging cycles: 60
+CPU:
+  Info: 8-core model: AMD Ryzen 7 6800U with Radeon Graphics bits: 64 type: MT MCP smt: enabled
+    arch: Zen 3 rev: 1 cache: L1: 512 KiB L2: 4 MiB L3: 16 MiB
+  Speed (MHz): avg: 809 high: 2107 min/max: 400/4768 cores: 1: 2107 2: 400 3: 1836 4: 400 5: 400
+    6: 400 7: 400 8: 400 9: 400 10: 400 11: 2107 12: 400 13: 2107 14: 400 15: 400 16: 400
+    bogomips: 86237
+  Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3 svm
+Graphics:
+  Device-1: AMD Rembrandt vendor: Lenovo driver: amdgpu v: kernel pcie: speed: 16 GT/s lanes: 16
+    ports: active: HDMI-A-1 off: eDP-1 empty: DP-1, DP-2, DP-3, DP-4, DP-5, DP-6, DP-7
+    bus-ID: 63:00.0 chip-ID: 1002:1681 class-ID: 0300
+  Device-2: Luxvisions Innotech Integrated RGB Camera type: USB driver: uvcvideo bus-ID: 5-1:2
+    chip-ID: 30c9:0056 class-ID: fe01 serial: <filter>
+  Display: x11 server: X.Org v: 1.21.1.4 driver: X: loaded: amdgpu,ati
+    unloaded: fbdev,modesetting,vesa gpu: amdgpu display-ID: :0 screens: 1
+  Screen-1: 0 s-res: 2560x1440 s-dpi: 144 s-size: 452x254mm (17.8x10.0") s-diag: 518mm (20.4")
+  Monitor-1: HDMI-A-0 mapped: HDMI-A-1 model: BEKO WUXGA serial: <filter> res: 2560x1440 hz: 50
+    dpi: 406 size: 160x90mm (6.3x3.5") diag: 1836mm (72.3") modes: max: 1920x1080 min: 640x480
+  OpenGL: renderer: REMBRANDT (rembrandt LLVM 15.0.7 DRM 3.54 6.5.0-14-generic)
+    v: 4.6 Mesa 23.2.1-1ubuntu3.1~22.04.2 direct render: Yes
+Audio:
+  Device-1: AMD vendor: Lenovo driver: snd_hda_intel v: kernel pcie: speed: 16 GT/s lanes: 16
+    bus-ID: 63:00.1 chip-ID: 1002:1640 class-ID: 0403
+  Device-2: AMD Raven/Raven2/FireFlight/Renoir Audio Processor vendor: Lenovo
+    driver: snd_pci_acp6x v: kernel pcie: speed: 16 GT/s lanes: 16 bus-ID: 63:00.5
+    chip-ID: 1022:15e2 class-ID: 0480
+  Device-3: AMD Family 17h HD Audio vendor: Lenovo driver: snd_hda_intel v: kernel pcie:
+    speed: 16 GT/s lanes: 16 bus-ID: 63:00.6 chip-ID: 1022:15e3 class-ID: 0403
+  Sound Server-1: ALSA v: k6.5.0-14-generic running: yes
+  Sound Server-2: PulseAudio v: 15.99.1 running: yes
+  Sound Server-3: PipeWire v: 0.3.48 running: yes
+Network:
+  Device-1: MEDIATEK vendor: Lenovo driver: mt7921e v: kernel pcie: speed: 5 GT/s lanes: 1
+    port: N/A bus-ID: 01:00.0 chip-ID: 14c3:0616 class-ID: 0280
+  IF: wlp1s0 state: up mac: <filter>
+Bluetooth:
+  Device-1: Foxconn / Hon Hai Wireless_Device type: USB driver: btusb v: 0.8 bus-ID: 3-3:3
+    chip-ID: 0489:e0d9 class-ID: e001 serial: <filter>
+  Report: hciconfig ID: hci0 rfk-id: 2 state: up address: <filter> bt-v: 3.0 lmp-v: 5.2
+    sub-v: 2311 hci-v: 5.2 rev: 2018
+Drives:
+  Local Storage: total: 476.94 GiB used: 50.8 GiB (10.7%)
+  ID-1: /dev/nvme0n1 vendor: Samsung model: MZAL4512HBLU-00BL2 size: 476.94 GiB speed: 63.2 Gb/s
+    lanes: 4 type: SSD serial: <filter> rev: 7L1QHXC7 temp: 24.9 C scheme: GPT
+Partition:
+  ID-1: / size: 467.89 GiB used: 50.79 GiB (10.9%) fs: ext4 dev: /dev/nvme0n1p2
+  ID-2: /boot/efi size: 511 MiB used: 11.9 MiB (2.3%) fs: vfat dev: /dev/nvme0n1p1
+Swap:
+  ID-1: swap-1 type: file size: 16 GiB used: 0 KiB (0.0%) priority: -2 file: /swapfile
+USB:
+  Hub-1: 1-0:1 info: Hi-speed hub with single TT ports: 4 rev: 2.0 speed: 480 Mb/s
+    chip-ID: 1d6b:0002 class-ID: 0900
+  Device-1: 1-3:2 info: Shenzhen Goodix FingerPrint type: <vendor specific> driver: N/A
+    interfaces: 1 rev: 2.0 speed: 12 Mb/s power: 100mA chip-ID: 27c6:550a class-ID: ff00
+  Hub2: 2-0:1 info: Super-speed hub ports: 2 rev: 3.1 speed: 10 Gb/s chip-ID: 1d6b:0003
+    class-ID: 0900
+  Hub-3: 3-0:1 info: Hi-speed hub with single TT ports: 3 rev: 2.0 speed: 480 Mb/s
+    chip-ID: 1d6b:0002 class-ID: 0900
+  Device-1: 3-2:2 info: Logitech Wireless Receiver type: Mouse driver: hid-generic,usbhid
+    interfaces: 1 rev: 1.1 speed: 12 Mb/s power: 50mA chip-ID: 046d:c542 class-ID: 0301
+  Device-2: 3-3:3 info: Foxconn / Hon Hai Wireless_Device type: Bluetooth driver: btusb
+    interfaces: 3 rev: 2.1 speed: 480 Mb/s power: 100mA chip-ID: 0489:e0d9 class-ID: e001
+    serial: <filter>
+  Hub-4: 4-0:1 info: Super-speed hub ports: 2 rev: 3.1 speed: 10 Gb/s chip-ID: 1d6b:0003
+    class-ID: 0900
+  Hub-5: 5-0:1 info: Hi-speed hub with single TT ports: 1 rev: 2.0 speed: 480 Mb/s
+    chip-ID: 1d6b:0002 class-ID: 0900
+  Device-1: 5-1:2 info: Luxvisions Innotech Integrated RGB Camera type: Video driver: uvcvideo
+    interfaces: 3 rev: 2.0 speed: 480 Mb/s power: 500mA chip-ID: 30c9:0056 class-ID: fe01
+    serial: <filter>
+  Hub-6: 6-0:1 info: Linux Foundation 3.0 root hub ports: N/A rev: 3.0 speed: 5 Gb/s
+    chip-ID: 1d6b:0003 class-ID: 0900
+  Hub-7: 7-0:1 info: Hi-speed hub with single TT ports: 1 rev: 2.0 speed: 480 Mb/s
+    chip-ID: 1d6b:0002 class-ID: 0900
+  Hub-8: 8-0:1 info: Super-speed hub ports: 1 rev: 3.1 speed: 10 Gb/s chip-ID: 1d6b:0003
+    class-ID: 0900
+  Hub-9: 9-0:1 info: Hi-speed hub with single TT ports: 1 rev: 2.0 speed: 480 Mb/s
+    chip-ID: 1d6b:0002 class-ID: 0900
+  Hub-10: 10-0:1 info: Super-speed hub ports: 1 rev: 3.1 speed: 10 Gb/s chip-ID: 1d6b:0003
+    class-ID: 0900
+Sensors:
+  System Temperatures: cpu: 50.0 C mobo: 32.0 C
+  Fan Speeds (RPM): N/A
+Repos:
+  Packages: apt: 2391
+  No active apt repos in: /etc/apt/sources.list
+  Active apt repos in: /etc/apt/sources.list.d/official-package-repositories.list
+    1: deb https: //mirrors.cicku.me/linuxmint/packages virginia main upstream import backport
+    2: deb http: //mirror.us-midwest-1.nexcess.net/ubuntu jammy main restricted universe multiverse
+    3: deb http: //mirror.us-midwest-1.nexcess.net/ubuntu jammy-updates main restricted universe multiverse
+    4: deb http: //mirror.us-midwest-1.nexcess.net/ubuntu jammy-backports main restricted universe multiverse
+    5: deb http: //security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+  Active apt repos in: /etc/apt/sources.list.d/vscode.list
+    1: deb [arch=amd64,arm64,armhf] https: //packages.microsoft.com/repos/code stable main
+Info:
+  Processes: 415 Uptime: 2h 21m wakeups: 608 Memory: 12.88 GiB used: 3.94 GiB (30.6%)
+  Init: systemd v: 249 runlevel: 5 Compilers: gcc: 11.4.0 alt: 11/12 Client: Cinnamon v: 6.0.4
+  inxi: 3.3.13
