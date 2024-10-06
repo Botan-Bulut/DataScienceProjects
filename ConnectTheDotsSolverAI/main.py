@@ -9,7 +9,6 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import os
 import sys
-import pdb
 
 
 def script_help() -> None:
