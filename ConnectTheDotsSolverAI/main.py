@@ -15,14 +15,13 @@ import pdb
 def script_help() -> None:
     """Prints the script help file"""
 
-    help_string = (
-"""
+    help_string ="""
 *** Connect the dots AI solver script ***
 
 --help: Displays the help.
 
 Usage: main.py <path to problem file.>
-""")
+"""
     
     print(help_string)
 
@@ -50,8 +49,10 @@ def validate_user_input(args: list) -> None:
         print("Script terminated with error.")
         sys.exit(1)
 
+
 class Game():
     """Main game class."""
+    
 
     def __init__(self, problem_path: str) -> None:
         
@@ -60,9 +61,11 @@ class Game():
         self.game = None  # This is NumPy array representation of the game.
         self.start_loc = None
         self.solved_status = False  # Update this when AI solves the puzzle.
+        self.solution_dict = None
         self.solution_path = None  # Solution path of the puzzle.
         self.unfilled_locations = None  # Unfilled row index locations.
         return None
+    
 
     def read_game(self) -> None:
         """This method reads game file and converts it to NumPy array."""
@@ -96,26 +99,53 @@ class Game():
                 reverse=False)
 
         return None
+    
 
     def plot_game(self) -> None:
         """This method is used for plotting the game."""
         
         cmap = ListedColormap(['Black', 'Gray', 'Red'])
-        plt.figure('Game Plot', figsize=(5, 5), dpi=150)
-        plt.title('Game Plot', fontsize=16, fontweight='bold')
-        plt.imshow(self.game,
+        fig = plt.figure('Game Plot', figsize=(5, 5), dpi=150)
+        ax = fig.add_subplot()
+        ax.set_title('Game Plot', fontsize=16, fontweight='bold')
+        ax.imshow(self.game,
                 cmap=cmap,
                 aspect='equal',
                 extent=(0, self.game.shape[1],
-                    0, self.game.shape[0]))
+                    0, self.game.shape[0]),
+                origin='lower')
+
+        ax.grid(True, linewidth=2, color='k')
         
-        plt.tick_params(labelbottom=False,
+        ax.tick_params(labelbottom=False,
                 labelleft=False)
 
-        plt.grid(True, linewidth=2, color='k')
-        plt.tight_layout()
+        ax.set_xticks(np.arange(0, self.game.shape[1] + 1, 1))
+        ax.set_yticks(np.arange(0, self.game.shape[0] + 1, 1))
+        
+        # If puzzle is solved:
+        if self.solved_status == True:
+        
+            y = np.array([y[0] for y in self.solution_dict.keys()])
+            x = np.array([x[1] for x in self.solution_dict.keys()])
+            y = y + 0.5
+            x = x + 0.5
+
+            # Plot solution path:
+            ax.plot(x,
+                    y,
+                    ls='--',
+                    color='yellow',
+                    lw=3,
+                    marker='o',
+                    markersize=10,
+                    mec='k')
+
+        ax.invert_yaxis()
+        fig.tight_layout()
         plt.show()
         return None
+    
 
     def solver(self, target_loc: tuple,
             updated_game: np.ndarray,
@@ -123,14 +153,18 @@ class Game():
         """
         AI solver function: implements the search algorihms recursively.
         """
+        
         # Return and set the status if win:
         if self.solver_check_win_status(current_game=updated_game):
             print('** AI successfully found a solution! **')
             self.solved_status = True
             self.solution_path = list(solution_dict.values()).copy()
-            print(solution_dict)
+            self.solution_dict = solution_dict.copy()
+
+            # Call the plot once again:
+            self.plot_game()
             return None
-        # pdb.set_trace() 
+        
         available_locations = (self
                 .solver_get_available_moves(current_loc=target_loc,
                     current_game=updated_game))
@@ -150,11 +184,6 @@ class Game():
                 # Add location and direction pair to dict:
                 updated_dict = solution_dict.copy()
                 updated_dict[location] = direction
-                # print(target_loc)
-                # print(location)
-                # print(direction)
-                # print(updated_dict)
-                # Get post move game array:
                 post_move_game = (self
                         .solver_get_updated_game(current_game=updated_game,
                             move=location))
@@ -163,6 +192,7 @@ class Game():
                 self.solver(target_loc=location,
                         updated_game=post_move_game,
                         solution_dict=updated_dict)
+    
 
     def solver_get_updated_game(self,
             current_game: np.ndarray,
@@ -174,6 +204,7 @@ class Game():
         updated_game[move] = 2
         return updated_game
     
+
     def solver_get_move_type(self,
             initial_loc: tuple,
             moved_loc: tuple) -> str:
@@ -193,6 +224,7 @@ class Game():
             return 'right'
         else:
             return 'left'
+    
 
     def solver_get_available_moves(self,
             current_loc: tuple,
@@ -214,6 +246,7 @@ class Game():
             possible_move_locations))
         
         return available_locations
+
 
     def solver_check_win_status(self, current_game: np.ndarray) -> bool:
         """
@@ -245,8 +278,8 @@ def main() -> None:
             updated_game=game.game,
             solution_dict={game.start_loc: 'start'})
     
-    print('\n'.join(game.solution_path))
-
+    # Print game solution
+    print('-'.join(game.solution_path))
     return None
 
 if __name__=='__main__':
