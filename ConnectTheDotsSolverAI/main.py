@@ -10,7 +10,6 @@ from matplotlib.colors import ListedColormap
 import os
 import sys
 
-
 def script_help() -> None:
     """Prints the script help file"""
 
